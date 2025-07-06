@@ -13,7 +13,7 @@ export class Contracts extends Model<Contracts>{
         type:DataType.BLOB('long'),
         allowNull:false
     })
-    pdf_file: Buffer;
+    pdf_file!: Buffer;
 
     @Column({ type: DataType.DATE })
     created_at!: Date;

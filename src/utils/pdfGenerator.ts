@@ -6,19 +6,20 @@ import { ContractData } from '../models/contract.model.js'
 
 
 
-export async function generatePDF(data:ContractData): Promise<string>{
+export async function generatePDF(data:ContractData): Promise<Buffer>{
     const templatePaht = path.resolve('src','templates','contract.template.hbs')
     const htmlTemplate = fs.readFileSync(templatePaht,'utf8')
     const template = Handlebars.compile(htmlTemplate)
     const html = template(data);
 
-    const outputPath = path.resolve('src','contracts',`contract-${Date.now()}.pdf`)
+    //const outputPath = path.resolve('src','contracts',`contract-${Date.now()}.pdf`)
 
    const browser = await puppeteer.launch()
    const page = await browser.newPage()
    await page.setContent(html,{waitUntil: 'networkidle0'})
-   await page.pdf({path: outputPath,format:'A4',printBackground:true})
-
+   //await page.pdf({path: outputPath,format:'A4',printBackground:true})
+   const pdfUint8array = await page.pdf({format:'A4',printBackground:true})
+   const pdfBuffer= Buffer.from(pdfUint8array)
    await browser.close();
-   return outputPath;
+   return pdfBuffer;
 }
