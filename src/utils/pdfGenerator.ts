@@ -1,0 +1,24 @@
+import fs from 'fs'
+import path, { resolve } from 'path'
+import Handlebars from 'handlebars'
+import puppeteer from 'puppeteer';
+import { ContractData } from '../models/contract.model.js'
+
+
+
+export async function generatePDF(data:ContractData): Promise<string>{
+    const templatePaht = path.resolve('src','templates','contract.template.hbs')
+    const htmlTemplate = fs.readFileSync(templatePaht,'utf8')
+    const template = Handlebars.compile(htmlTemplate)
+    const html = template(data);
+
+    const outputPath = path.resolve('src','contracts',`contract-${Date.now()}.pdf`)
+
+   const browser = await puppeteer.launch()
+   const page = await browser.newPage()
+   await page.setContent(html,{waitUntil: 'networkidle0'})
+   await page.pdf({path: outputPath,format:'A4',printBackground:true})
+
+   await browser.close();
+   return outputPath;
+}

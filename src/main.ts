@@ -1,12 +1,23 @@
 import { pool } from './config/database.js'
 
-async function start() {
-  try {
-    const [rows] = await pool.query('SELECT NOW() AS now');
-    console.log('Conectado com sucesso:', rows);
-  } catch (err) {
-    console.error('Erro na conexão:', err);
-  }
-}
+import { ContractController } from './controllers/contract.controller.js';
 
-start()
+ContractController.generate({
+  clientName: 'João da Silva',
+  serviceName: 'Desenvolvimento Web',
+  value: 2500,
+  dueDate: '2025-07-15'
+});
+
+
+
+// async function start() {
+//   try {
+//     const [rows] = await pool.query('SELECT NOW() AS now');
+//     console.log('Conectado com sucesso:', rows);
+//   } catch (err) {
+//     console.error('Erro na conexão:', err);
+//   }
+// }
+
+// start()
