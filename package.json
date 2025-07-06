@@ -25,6 +25,7 @@
     "pdf": "^0.1.0",
     "pdf-lib": "^1.17.1",
     "puppeteer": "^24.11.2",
+    "sequelize-typescript": "^2.1.6",
     "ts-node": "^10.9.2"
   }
 }
