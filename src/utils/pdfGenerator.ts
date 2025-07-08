@@ -12,13 +12,12 @@ export async function generatePDF(data:ContractData): Promise<Buffer>{
     const template = Handlebars.compile(htmlTemplate)
     const html = template(data);
 
-    //const outputPath = path.resolve('src','contracts',`contract-${Date.now()}.pdf`)
 
    const browser = await puppeteer.launch()
    const page = await browser.newPage()
    await page.setContent(html,{waitUntil: 'networkidle0'})
-   //await page.pdf({path: outputPath,format:'A4',printBackground:true})
    const pdfUint8array = await page.pdf({format:'A4',printBackground:true})
+   //converting from uint8 to buffer type
    const pdfBuffer= Buffer.from(pdfUint8array)
    await browser.close();
    return pdfBuffer;

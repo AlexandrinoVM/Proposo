@@ -1,6 +1,9 @@
 export interface ContractData {
     clientName:string;
-    serviceName:string;
+    projectTitle:string;
+    data:Date;
     value: number;
-    dueDate: string;
+    section:[]
+    observations:string;
+    customClauses:[]
 }

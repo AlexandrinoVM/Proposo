@@ -1,9 +1,18 @@
-<!DOCTYPE html>
- <body>
-    <h1>Contrato de Prestação de Serviço</h1>
-    <p>Cliente: {{clientName}}</p>
-    <p>Serviço: {{serviceName}}</p>
-    <p>Valor: R$ {{value}}</p>
-    <p>Data de vencimento: {{dueDate}}</p>
-  </body>
-</html>
+<h2>{{projectTitle}}</h2>
+
+{{#each sections}}
+  <h3>{{title}}</h3>
+  <p>{{content}}</p>
+{{/each}}
+
+{{#if observations}}
+  <h4>Observações</h4>
+  <p>{{observations}}</p>
+{{/if}}
+
+{{#each customClauses}}
+  {{#if enabled}}
+    <h4>{{title}}</h4>
+    <p>{{content}}</p>
+  {{/if}}
+{{/each}}
