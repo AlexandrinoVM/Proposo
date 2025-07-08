@@ -2,27 +2,30 @@ import { sequelize } from './config/database.js'
 import express from 'express'
 import {Router,Request,Response} from 'express'
 import { ContractController } from './controllers/contract.controller.js';
+
+import route from "./routes/Contracts.route.js"
+
 import dotenv from 'dotenv'
 dotenv.config()
 const app = express()
 
-const route = Router()
-const getPdfRoute = Router()
+// const route = Router()
+// const getPdfRoute = Router()
 
 app.use(express.json())
 
 
-route.post('/',(req:Request,res:Response)=>{
-    ContractController.generate(req,res);
-})
+// route.post('/',(req:Request,res:Response)=>{
+//     ContractController.generate(req,res);
+// })
 
-route.delete('/:id',(req:Request,res:Response)=>{
-    ContractController.deleteContract(req,res);
-})
+// route.delete('/:id',(req:Request,res:Response)=>{
+//     ContractController.deleteContract(req,res);
+// })
 
-route.get('/:id/pdf',(req:Request,res:Response)=>{
-    ContractController.getContractPDF(req,res);
-})
+// route.get('/:id/pdf',(req:Request,res:Response)=>{
+//     ContractController.getContractPDF(req,res);
+// })
 // ContractController.generate({
 //   clientName: 'João da Silva',
 //   serviceName: 'Desenvolvimento Web',
