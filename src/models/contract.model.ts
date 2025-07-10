@@ -3,7 +3,8 @@ export interface ContractData {
     projectTitle:string;
     data:Date;
     value: number;
-    section:[]
+    section:[];
     observations:string;
-    customClauses:[]
+    customClauses:[];
+    saveTemplate: Boolean
 }

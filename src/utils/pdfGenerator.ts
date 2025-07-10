@@ -3,7 +3,7 @@ import path, { resolve } from 'path'
 import Handlebars from 'handlebars'
 import puppeteer from 'puppeteer';
 import { ContractData } from '../models/contract.model.js'
-
+import { pdfTemplateGenerate } from './pdfTemplateGenerator.js';
 
 
 export async function generatePDF(data:ContractData): Promise<Buffer>{
@@ -11,7 +11,6 @@ export async function generatePDF(data:ContractData): Promise<Buffer>{
     const htmlTemplate = fs.readFileSync(templatePaht,'utf8')
     const template = Handlebars.compile(htmlTemplate)
     const html = template(data);
-
 
    const browser = await puppeteer.launch()
    const page = await browser.newPage()

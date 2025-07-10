@@ -9,30 +9,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express()
 
-// const route = Router()
-// const getPdfRoute = Router()
-
 app.use(express.json())
-
-
-// route.post('/',(req:Request,res:Response)=>{
-//     ContractController.generate(req,res);
-// })
-
-// route.delete('/:id',(req:Request,res:Response)=>{
-//     ContractController.deleteContract(req,res);
-// })
-
-// route.get('/:id/pdf',(req:Request,res:Response)=>{
-//     ContractController.getContractPDF(req,res);
-// })
-// ContractController.generate({
-//   clientName: 'João da Silva',
-//   serviceName: 'Desenvolvimento Web',
-//   value: 2500,
-//   dueDate: '2025-07-15'
-// });
-
 
 app.use(route)
 const port = process.env.PORT || 3333
