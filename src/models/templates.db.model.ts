@@ -13,7 +13,7 @@ export class Templates extends Model<Templates>{
         type:DataType.TEXT,
         allowNull:false
     })
-    content!: Text;
+    content!: string;
 
     @Column({ type: DataType.DATE })
     created_at!: Date;

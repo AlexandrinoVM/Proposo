@@ -1,8 +1,8 @@
-<h2>{{projectTitle}}</h2>
+<h2 style="text-align: center;">{{projectTitle}}</h2>
 
 {{#each sections}}
-  <h3>{{title}}</h3>
-  <p>{{content}}</p>
+  <h3 style="text-align: {{alignTitle}};">{{title}}</h3>
+  <p style="text-align: {{alignContent}};">{{content}}</p>
 {{/each}}
 
 {{#if observations}}
