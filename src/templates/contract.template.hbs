@@ -1,18 +1,18 @@
 <h2 style="text-align: center;">{{projectTitle}}</h2>
 
 {{#each sections}}
-  <h3 style="text-align: {{alignTitle}};">{{title}}</h3>
-  <p style="text-align: {{alignContent}};">{{content}}</p>
+  <h3 style="text-align: {{alignTitle}}; color: {{TitleColor}};">{{title}}</h3>
+  <p style="text-align: {{alignContent}}; color: {{ContentColor}};">{{content}}</p>
 {{/each}}
 
-{{#if observations}}
-  <h4>Observações</h4>
-  <p>{{observations}}</p>
+{{#if observations.observations}}
+  <h4 style="text-align: {{observations.alignTitle}}; color: {{observations.TitleColor}};">Observações</h4>
+  <p style="text-align: {{observations.alignContent}}; color: {{observations.ContentColor}};">
+    {{observations.observations}}
+  </p>
 {{/if}}
 
 {{#each customClauses}}
-  {{#if enabled}}
-    <h4>{{title}}</h4>
-    <p>{{content}}</p>
-  {{/if}}
+  <h4 style="text-align: {{alignTitle}}; color: {{TitleColor}};">{{title}}</h4>
+  <p style="text-align: {{alignContent}}; color: {{ContentColor}};">{{content}}</p>
 {{/each}}

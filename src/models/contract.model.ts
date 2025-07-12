@@ -1,9 +1,6 @@
-export interface Section{
-    title:string;
-    content:string;
-    alignTitle?: "left" | "center" | "right";
-    alignContent?: "left" | "center" | "right";
-}
+import { observations } from "../intefaces/observations.contract.js";
+import { Section } from "../intefaces/section.contract.js";
+
 
 
 export interface ContractData {
@@ -12,7 +9,7 @@ export interface ContractData {
     date:Date;
     value: number;
     sections:Section[];
-    observations:string;
-    customClauses:[];
+    observations:observations;
+    customClauses:Section[];
     saveTemplate: Boolean
 }
