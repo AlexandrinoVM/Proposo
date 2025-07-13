@@ -1,6 +1,6 @@
 import { observations } from "../intefaces/observations.contract.js";
 import { Section } from "../intefaces/section.contract.js";
-
+import { signature } from "../intefaces/signatures.contract.js";
 
 
 export interface ContractData {
@@ -11,5 +11,7 @@ export interface ContractData {
     sections:Section[];
     observations:observations;
     customClauses:Section[];
-    saveTemplate: Boolean
+    saveTemplate: Boolean;
+    logo?: string;
+    signatures:signature[];
 }

@@ -16,3 +16,17 @@
   <h4 style="text-align: {{alignTitle}}; color: {{TitleColor}};">{{title}}</h4>
   <p style="text-align: {{alignContent}}; color: {{ContentColor}};">{{content}}</p>
 {{/each}}
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px;">
+  {{#each signatures}}
+    <div style="flex: 1 1 45%; min-width: 300px; margin-top: 50px;">
+      <p><strong>{{role}}</strong> - Assinatura:</p>
+      {{#if signatureImage}}
+        <img src="{{signatureImage}}" alt="Assinatura de {{name}}" style="width: 250px;" />
+      {{else}}
+        <div style="width: 250px; height: 80px; border-bottom: 1px solid black;"></div>
+      {{/if}}
+      <p style="margin-top: 5px;">{{name}}</p>
+    </div>
+  {{/each}}
+</div>
