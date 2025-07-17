@@ -1,6 +1,6 @@
 
 import path from "path";
-import { ContractData } from "../models/contract.model.js";
+import { ContractData } from "../intefaces/contract.model.js";
 import fs from "fs"
 export function processJSON(data:ContractData){
     data.sections = data.sections.map(section=>({

@@ -2,7 +2,7 @@ import fs from 'fs'
 import path, { resolve } from 'path'
 import Handlebars from 'handlebars'
 import puppeteer from 'puppeteer';
-import { ContractData } from '../models/contract.model.js'
+import { ContractData } from '../intefaces/contract.model.js'
 import { pdfTemplateGenerate } from './pdfTemplateGenerator.js';
 import { processJSON } from './processJSON.js';
 

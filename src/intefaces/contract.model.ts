@@ -1,7 +1,7 @@
-import { header } from "../intefaces/header.contract.js";
-import { observations } from "../intefaces/observations.contract.js";
-import { Section } from "../intefaces/section.contract.js";
-import { signature } from "../intefaces/signatures.contract.js";
+import { header } from "./header.contract.js";
+import { observations } from "./observations.contract.js";
+import { Section } from "./section.contract.js";
+import { signature } from "./signatures.contract.js";
 
 
 export interface ContractData {

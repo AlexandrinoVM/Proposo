@@ -1,5 +1,5 @@
 import { Contracts } from "../models/contract.db.model.js";
-import { ContractData } from "../models/contract.model.js";
+import { ContractData } from "../intefaces/contract.model.js";
 import { ContractService } from "../services/contract.service.js";
 import { Request, Response } from 'express';
 
