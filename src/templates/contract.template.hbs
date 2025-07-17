@@ -1,10 +1,40 @@
+<!-- Headers -->
+<div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px;">
+  {{#if Header.logo}}
+    <div style="flex: 0 0 auto;">
+      <img src="{{Header.logo}}" alt="Logo da empresa" style="max-height: 100px;" />
+    </div>
+  {{/if}}
+
+  <div style="flex: 1;">
+    <table style="width: 100%; font-size: 14px;">
+      <tr>
+        <td style="padding: 4px 0;"><strong>Contratante:</strong></td>
+        <td style="padding: 4px 0;">{{Header.contractor}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 4px 0;"><strong>CNPJ:</strong></td>
+        <td style="padding: 4px 0;">{{Header.cnpj}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 4px 0;"><strong>Endereço:</strong></td>
+        <td style="padding: 4px 0;">{{Header.addres}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<!-- Project Title -->
 <h2 style="text-align: center;">{{projectTitle}}</h2>
 
+<!-- Main Sections -->
 {{#each sections}}
   <h3 style="text-align: {{alignTitle}}; color: {{TitleColor}};">{{title}}</h3>
   <p style="text-align: {{alignContent}}; color: {{ContentColor}};">{{content}}</p>
 {{/each}}
 
+<!-- Observations -->
 {{#if observations.observations}}
   <h4 style="text-align: {{observations.alignTitle}}; color: {{observations.TitleColor}};">Observações</h4>
   <p style="text-align: {{observations.alignContent}}; color: {{observations.ContentColor}};">
@@ -12,21 +42,21 @@
   </p>
 {{/if}}
 
+<!-- Custom Clauses -->
 {{#each customClauses}}
   <h4 style="text-align: {{alignTitle}}; color: {{TitleColor}};">{{title}}</h4>
   <p style="text-align: {{alignContent}}; color: {{ContentColor}};">{{content}}</p>
 {{/each}}
 
-<div style="display: flex; flex-wrap: wrap; gap: 40px;">
-  {{#each signatures}}
-    <div style="flex: 1 1 45%; min-width: 300px; margin-top: 50px;">
-      <p><strong>{{role}}</strong> - Assinatura:</p>
-      {{#if signatureImage}}
-        <img src="{{signatureImage}}" alt="Assinatura de {{name}}" style="width: 250px;" />
-      {{else}}
+<!-- Signatures -->
+<div style="padding: 40px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+    {{#each signatures}}
+      <div style="flex: 1 1 45%; min-width: 300px; margin-top: 50px;">
+        <p><strong>{{role}}</strong> - Assinatura:</p>
         <div style="width: 250px; height: 80px; border-bottom: 1px solid black;"></div>
-      {{/if}}
-      <p style="margin-top: 5px;">{{name}}</p>
-    </div>
-  {{/each}}
+        <p style="margin-top: 5px;">{{name}}</p>
+      </div>
+    {{/each}}
+  </div>
 </div>

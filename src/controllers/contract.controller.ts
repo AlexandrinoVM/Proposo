@@ -8,7 +8,7 @@ export class ContractController {
         const data:ContractData = req.body;
         try{
             const pathToPdf = await ContractService.createContract(data);
-            return res.status(201).json({sucess: true,message:'contract created with sucess',path:pathToPdf})
+            return res.status(201).json({sucess: true,message:'contract created with sucess'})
         }catch(err){
             return res.status(500).json({sucess: false,message:'contract not created',error:err})
         }
@@ -27,7 +27,7 @@ export class ContractController {
             res.send(contract.pdf_file)
         }catch(err){
             console.error(err)
-            res.status(500).json({error: 'Erro ao buscar contrato'})
+            res.status(500).json({message: 'Error Searching for Contract',error:err})
         }
     }
 

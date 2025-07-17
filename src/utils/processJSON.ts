@@ -1,6 +1,7 @@
 
+import path from "path";
 import { ContractData } from "../models/contract.model.js";
-
+import fs from "fs"
 export function processJSON(data:ContractData){
     data.sections = data.sections.map(section=>({
         ...section,
@@ -27,6 +28,21 @@ export function processJSON(data:ContractData){
         TitleColor: data.observations.TitleColor || "black",
         ContentColor: data.observations.ContentColor || "black"
         };
+    }
+    
+    if (!data.Header.pathLogo?.trim()) {
+        console.warn(`extension not supported`)
+        delete data.Header.logo;
+    }else{
+        const ext = path.extname(data.Header.pathLogo).toLowerCase().replace(".","")
+        const suportEXT = ['png','jpg','jpeg','webp','svg']
+
+        if(suportEXT.includes(ext)){
+            const base64 = fs.readFileSync(data.Header.pathLogo,{encoding:"base64"})
+            data.Header.logo = `data:image/${ext};base64,${base64}`
+        }else{
+            delete data.Header.logo;
+        }
     }
 
     return data
