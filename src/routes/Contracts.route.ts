@@ -11,7 +11,7 @@ const route = Router();
  *   post:
  *     summary: Generate a Contract with the given data
  *     tags:
- *       - Contratos
+ *       - Contracts
  *     requestBody:
  *       required: true
  *       content:
@@ -87,8 +87,6 @@ const route = Router();
  *                       type: string
  *                     alignContent:
  *                       type: string
- *               saveTemplate:
- *                 type: boolean
  *               signatures:
  *                 type: array
  *                 items:
@@ -141,7 +139,7 @@ route.post('/contract',(req:Request,res:Response)=>{
  *   delete:
  *     summary: delete contract by id
  *     tags:
- *       - Contratos
+ *       - Contracts
  *     parameters:
  *       - name: id
  *         in: path
@@ -190,7 +188,7 @@ route.delete('/contract/:id',(req:Request,res:Response)=>{
  *   get:
  *     summary: Get a contract PDF by ID
  *     tags:
- *       - Contratos
+ *       - Contracts
  *     parameters:
  *       - name: id
  *         in: path

@@ -13,6 +13,5 @@ export interface ContractData {
     sections:Section[];
     observations:observations;
     customClauses:Section[];
-    saveTemplate: Boolean;
     signatures:signature[];
 }

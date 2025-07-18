@@ -10,9 +10,9 @@ const options: Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Minha API com Swagger',
+      title: 'Proposo',
       version: '1.0.0',
-      description: 'Documentação da API com Swagger + TypeScript + Node.js',
+      description: 'Documentacion Api Typescript + NodeJs',
     },
     servers: [
       {
